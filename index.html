@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime or not uiux present</title>
+  </head>
+  <style>
+    body {
+      background-color: burlywood;
+    }
+    .ui {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      text-align: center;
+      margin-top: 10%;
+    }
+    #data {
+      margin-top: 6%;
+      margin-bottom: 6%;
+    }
+    .result {
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="ui">
+      <label for="data">Check a number prime or not</label><br />
+      <input placeholder="please enter a number" type="number" id="data" />
+      <button onclick="fetchdata()">Submit</button>
+    </div>
+    <div class="result">
+      <p id="show"></p>
+    </div>
+    <script>
+      let show = document.getElementById("show");
+
+      const fetchdata = () => {
+        let num = document.getElementById("data");
+        let userdata = num.value;
+        let isprime = true;
+        for (let x = 2; x < userdata; x++) {
+          if (userdata % x == 0) {
+            isprime = false;
+            break;
+          }
+        }
+        if (isprime) {
+          show.innerHTML = `${userdata} is a prime number`;
+        } else {
+          show.innerHTML = `${userdata} is not a prime number`;
+        }
+      };
+    </script>
+  </body>
+</html>
